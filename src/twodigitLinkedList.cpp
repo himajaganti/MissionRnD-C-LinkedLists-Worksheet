@@ -11,10 +11,9 @@ ERROR CASES:
 
 NOTES: Only Postive Numbers
 */
-
-#include <stdio.h>
-#include <malloc.h>
-
+#include<stdio.h>
+#include<malloc.h>
+#include<stddef.h>
 struct node {
 	int digit1;
 	int digit2;
@@ -22,5 +21,26 @@ struct node {
 };
 
 int convert_sll_2digit_to_int(struct node *head){
-	return 0;
+	long int r = 0;
+
+	int len = 0, rem, rm;
+	struct node *temp;
+	temp = head;
+	while (temp != NULL)
+	{
+		len++;
+		temp = temp->next;
+	}
+	temp = head;
+	while (temp != NULL)
+	{
+		rem = temp->digit1;
+			r = r * 10 + rem;
+		rem = temp->digit2;
+		r = r * 10 + rem;
+		temp = temp->next;
+
+	}
+
+	return r;
 }

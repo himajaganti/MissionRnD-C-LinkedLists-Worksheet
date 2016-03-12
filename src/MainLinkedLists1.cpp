@@ -32,7 +32,18 @@ int main(){
 
 	//Test numberToLinkedList
 
-	//Test removeEveryKthNode
+	/*Test removeEveryKthNode
+
+	struct node *temp, *var;
+	var = create();
+
+	temp = var;
+	while (temp->next != NULL)
+	{
+		printf("%d", temp->num);
+		temp = temp->next;
+	}
+	printf("%d", temp->num);*/
 
 	//Test sortLinkedList
 

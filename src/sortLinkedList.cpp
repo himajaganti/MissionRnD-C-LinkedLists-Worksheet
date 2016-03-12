@@ -12,12 +12,48 @@ NOTES: Without using extra array or linked list.
 */
 
 #include <stdio.h>
-
+#include <malloc.h>
+#include<stddef.h>
 struct node {
 	int num;
 	struct node *next;
 };
 
-struct node * sortLinkedList(struct node *head) {
-	return NULL;
+struct node * sortLinkedList(struct node *head){
+	int var, len = 0, i, j;
+	struct node *temp;
+	temp = head;
+	if (temp == NULL)
+	{
+		return NULL;
+	}
+	while (temp != NULL)
+	{
+		len++;
+		temp = temp->next;
+
+	}
+	temp = head;
+
+	for (i = 0; i < len; i++)
+	{
+		temp = head;
+		for (j = 0; j<len- 1; j++)
+		{
+			if (temp->num>temp->next->num)
+			{
+				var = temp->num;
+				temp->num = temp->next->num;
+				temp->next->num = var;
+			}
+			temp = temp->next;
+		}
+
+	}
+	return head;
 }
+
+
+
+
+
